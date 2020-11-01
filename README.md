@@ -41,7 +41,14 @@ App Challenges:
 * Need to determine the current month
 * Need to change text and styling based on location + month
 
-
+```text
+            App       - Has code to determine location + month
+             |
+             | It is winter
+             |
+             V
+        SeasonDisplay - Shows different text/icons based on props
+```
 
 # Getting Started with Create React App
 
