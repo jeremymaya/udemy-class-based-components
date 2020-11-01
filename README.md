@@ -50,6 +50,10 @@ App Challenges:
         SeasonDisplay - Shows different text/icons based on props
 ```
 
+## Getting a Users Physical Location
+
+The application uses [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/APIGeolocation_API) to obtain user's location. It can determine user's location based on the latitude information we get form Geolocation API's Position object.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
