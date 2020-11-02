@@ -50,9 +50,44 @@ App Challenges:
         SeasonDisplay - Shows different text/icons based on props
 ```
 
+---
+
 ## Getting a Users Physical Location
 
 The application uses [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/APIGeolocation_API) to obtain user's location. It can determine user's location based on the latitude information we get form Geolocation API's Position object.
+
+---
+
+## Handling Async Operations with Functional Components
+
+1. JS file loaded by browser
+2. App component gets created
+3. We call geolocation service - **ASYNC CALL!**
+4. App returns JSX, gets rendered to page as HTML
+5. We get result of geolocation
+
+Since step 4 will execute before step 3 completes its execution, React app with functional component causes an error.
+
+---
+
+## Refactoring from Functional to Class Components
+
+1. JS file loaded by browser
+2. App component gets created
+3. We call geolocation service - **ASYNC CALL!**
+4. App returns JSX, gets rendered to page as HTML
+5. We get result of geolocation
+6. *Tell the component to render itself with this new information*
+
+Using Class Components allows the app to use Reacts's State System
+
+Below are the rules of Class Components
+
+* Must be a Javascript Class
+* Must extend (subclass) React.Component
+* Must define a 'render' method that returns some amount of JSX
+
+
 
 # Getting Started with Create React App
 
