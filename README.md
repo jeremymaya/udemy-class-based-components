@@ -100,6 +100,25 @@ Below are the rules of State
 * State must be initialized when a component is created
 * State can **only** be updated using the function 'setState'
 
+---
+
+## App Lifecycle Walkthrough
+
+1. JS file loaded by browser
+2. Instance of App component is created
+3. App components 'constructor' function gets called (optional)
+   * 'super' function must to be called along with the constructor function
+4. State object is created and assigned to the 'this.state' property
+5. We call getlocation service
+6. React calls the components to render method
+7. App returns JSX, gets rendered to page as HTML
+8. We get result of geolocation!
+9. We update out state object with a call to 'this.setState'
+10. React sees that we updated the state of a component
+11. React calls our 'render' method a second time
+12. React takes that JSX and updates content on the screen
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

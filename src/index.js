@@ -30,6 +30,7 @@ class App extends React.Component {
             position => {
                 // using setState to update the state
                 // this.state.lat = position.coords.latitude is INVALID
+                // this runs sometime in future NOT when the constructor function runs
                 this.setState({ lat: position.coords.latitude });
             },
             err => {
