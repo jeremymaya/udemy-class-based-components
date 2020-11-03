@@ -21,16 +21,24 @@ class App extends React.Component {
         // super() references the parent constructor function for React.Component
         super(props);
 
+        // this is ONLY TIME we do direct assignment to this.state
         this.state = { lat: null };
-    }
-    // render() is required by React
-    render() {
+
+        // render method gets called often
+        // saves resources and load time by moving the getCurrentPosition outside of the the render()
         window.navigator.geolocation.getCurrentPosition(
-            position => console.log(position),
+            position => {
+                // using setState to update the state
+                // this.state.lat = position.coords.latitude is INVALID
+                this.setState({ lat: position.coords.latitude });
+            },
             err => console.log(err)
         )
-        
-        return <div>Latitude: </div>
+    }
+
+    // render() is required by React
+    render() {        
+        return <div>Latitude: { this.state.lat }</div>
     }
 }
 
