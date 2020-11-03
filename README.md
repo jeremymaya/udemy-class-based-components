@@ -87,7 +87,18 @@ Below are the rules of Class Components
 * Must extend (subclass) React.Component
 * Must define a 'render' method that returns some amount of JSX
 
+---
 
+## Rules of State
+
+Below are the rules of State
+
+* Only usable with class components - State can be also used with hooks system
+* You will confuse props with sate 🙁
+* 'State' is a JS object that contains data relevant to a component
+* Updating 'state' on a component causes the component to (almost) instantly render
+* State must be initialized when a component is created
+* State can **only** be updated using the function 'setState'
 
 # Getting Started with Create React App
 
