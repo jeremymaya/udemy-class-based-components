@@ -22,7 +22,7 @@ class App extends React.Component {
         super(props);
 
         // this is ONLY TIME we do direct assignment to this.state
-        this.state = { lat: null };
+        this.state = { lat: null, errorMessage: '' };
 
         // render method gets called often
         // saves resources and load time by moving the getCurrentPosition outside of the the render()
@@ -33,13 +33,21 @@ class App extends React.Component {
                 // this runs sometime in future NOT when the constructor function runs
                 this.setState({ lat: position.coords.latitude });
             },
-            err => console.log(err)
+            err => {
+                this.setState({ errorMessage: err.message });
+            }
         )
     }
 
     // render() is required by React
     render() {        
-        return <div>Latitude: { this.state.lat }</div>
+        return (
+            <div>
+                Latitude: { this.state.lat }
+                <br />
+                Error: { this.state.errorMessage }
+            </div>
+        );
     }
 }
 
