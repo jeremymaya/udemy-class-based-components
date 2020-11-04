@@ -38,19 +38,19 @@ class App extends React.Component {
         // this.state.lat = position.coords.latitude is INVALID
         // this runs sometime in future NOT when the constructor function runs
         window.navigator.geolocation.getCurrentPosition(
-            position =>  this.setState({ lat: position.coords.latitude }),
-            err => this.setState({ errorMessage: err.message })
+            position =>  this.setState({lat: position.coords.latitude}),
+            err => this.setState({errorMessage: err.message})
         )
     }
 
     // render() is required by React
     render() {
         if (this.state.errorMessage && !this.state.lat){
-            return <div>Error: { this.state.errorMessage }</div>
+            return <div>Error: {this.state.errorMessage}</div>
         }
 
         if (!this.state.errorMessage && this.state.lat){
-            return <SeasonDisplay lat={ this.state.lat }/>
+            return <SeasonDisplay lat={this.state.lat}/>
         }
 
         return <div>Loading!</div>
