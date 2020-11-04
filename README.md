@@ -118,6 +118,51 @@ Below are the rules of State
 11. React calls our 'render' method a second time
 12. React takes that JSX and updates content on the screen
 
+---
+
+## Introducing Lifecycle Method
+
+A component lifecycle method is a function that can get optionally defined inside of a class based component.
+
+The lifecycle method is called automatically by React at certain points during a component's life cycle.
+
+Component Lifecycle:
+
+1. constructor
+2. render
+   * content visible on screen
+3. `componentDidMount`
+   * sit and wait for updates
+4. `componentDidUpdate`
+   * sit and wait until this component is no longer shown
+5. `componentWillUnmount`
+
+---
+
+## Why Lifecycle Methods
+
+Component Lifecycle:
+
+1. constructor - good place to do one-time setup
+2. render - avoid doing anything besides returning JSX
+   * content visible on screen
+3. `componentDidMount` - good place to do data-loading
+   * sit and wait for updates
+4. `componentDidUpdate` - good place to do more data-loading when state/prop change
+   * sit and wait until this component is no longer shown
+5. `componentWillUnmount` - good place to do cleanup (especially for non-React stuff)
+
+Notes:
+
+* Avoid data-loading in the constructor function for code clarity purpose - use componentDidMount
+
+Other available lifecycle methods (rarely used):
+
+* `shouldComponentUpdate`
+* `getDerivedStateFromProps`
+* `getSnapshotBeforeUpdate`
+
+---
 
 # Getting Started with Create React App
 
