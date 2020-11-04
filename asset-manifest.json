@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/udemy-class-based-components/static/css/main.f06747eb.chunk.css",
+    "main.js": "/udemy-class-based-components/static/js/main.78454cdd.chunk.js",
+    "main.js.map": "/udemy-class-based-components/static/js/main.78454cdd.chunk.js.map",
+    "runtime-main.js": "/udemy-class-based-components/static/js/runtime-main.74bf28ca.js",
+    "runtime-main.js.map": "/udemy-class-based-components/static/js/runtime-main.74bf28ca.js.map",
+    "static/js/2.dd731c1c.chunk.js": "/udemy-class-based-components/static/js/2.dd731c1c.chunk.js",
+    "static/js/2.dd731c1c.chunk.js.map": "/udemy-class-based-components/static/js/2.dd731c1c.chunk.js.map",
+    "index.html": "/udemy-class-based-components/index.html",
+    "static/css/main.f06747eb.chunk.css.map": "/udemy-class-based-components/static/css/main.f06747eb.chunk.css.map",
+    "static/js/2.dd731c1c.chunk.js.LICENSE.txt": "/udemy-class-based-components/static/js/2.dd731c1c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74bf28ca.js",
+    "static/js/2.dd731c1c.chunk.js",
+    "static/css/main.f06747eb.chunk.css",
+    "static/js/main.78454cdd.chunk.js"
+  ]
+}
