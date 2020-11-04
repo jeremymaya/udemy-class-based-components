@@ -44,8 +44,8 @@ class App extends React.Component {
         )
     }
 
-    // render() is required by React
-    render() {
+    // avoid conditional statement in the render method by creating a helper function
+    renderContent() {
         if (this.state.errorMessage && !this.state.lat){
             return <div>Error: {this.state.errorMessage}</div>;
         }
@@ -55,6 +55,17 @@ class App extends React.Component {
         }
 
         return <Spinner message="Please allow location request..."/>;
+    }
+
+    // render() is required by React
+    // render() should have only one return statement
+    // allows the content from renderContent() to be wrapped in a class which could be styled and etc.
+    render() {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        );
     }
 }
 
