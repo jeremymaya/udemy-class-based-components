@@ -1,6 +1,89 @@
 # udemy-class-based-components
 
-## Class-Based Components
+![Action Status](https://github.com/jeremymaya/udemy-class-based-components/workflows/build/badge.svg)
+
+Author: Kyungrae Kim
+
+Deployed App: <https://jeremymaya.github.io/udemy-class-based-components>
+
+---
+
+## Application Overview
+
+This is a follow along project from [Modern React with Redux by Stephen Grider](https://www.udemy.com/course/react-redux/).
+
+This is a React application that displays an appropriate screen based on what season a user is experiencing right now by detecting the location and time of the user.
+
+App Challenges:
+
+* Need to get the user's physical location
+* Need to determine the current month
+* Need to change text and styling based on location + month
+
+```text
+            App       - Has code to determine location + month
+             |
+             |
+             | It is winter
+             |
+             V
+        SeasonDisplay - Shows different text/icons based on props
+```
+
+---
+
+## Architecture
+
+This application uses the following dependencies:
+
+* React
+* ReactDOM
+* [Semantic UI](https://semantic-ui.com/)
+* GitHub Pages
+
+---
+
+## Getting Started
+
+Clone this repository to your local machine:
+
+```bash
+https://github.com/jeremymaya/udemy-class-based-components.git
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Development Mode
+
+In the project directory, run:
+
+```bash
+npm start
+```
+
+The above command runs the app in the development mode.  
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.  
+You will also see any lint errors in the console.
+
+---
+
+## Notes from the Course Section
+
+### Class-Based Components
+
+Benefits of Class Components includes:
+
+* Easier code organization
+* Can use state (another React system)
+  * Easier to handle user input
+* Understands lifecycle events
+  * Easier to do things when the app first starts
 
 How React used to be:
 
@@ -23,42 +106,11 @@ Companies with **established projects** are using Class-based Components
 
 Companies with **newer projects** may be using Class-based components **or** Function-based components
 
-## Application Overview
-
-Benefits of Class Components:
-
-* Easier code organization
-* Can use state (another React system)
-  * Easier to handle user input
-* Understands lifecycle events
-  * Easier to do things when the app first starts
-
-This is a React application that displays an appropriate screen based on what season a user is experiencing right now by detecting the location and time of the user.
-
-App Challenges:
-
-* Need to get the user's physical location
-* Need to determine the current month
-* Need to change text and styling based on location + month
-
-```text
-            App       - Has code to determine location + month
-             |
-             | It is winter
-             |
-             V
-        SeasonDisplay - Shows different text/icons based on props
-```
-
----
-
-## Getting a Users Physical Location
+### Getting a Users Physical Location
 
 The application uses [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/APIGeolocation_API) to obtain user's location. It can determine user's location based on the latitude information we get form Geolocation API's Position object.
 
----
-
-## Handling Async Operations with Functional Components
+### Handling Async Operations with Functional Components
 
 1. JS file loaded by browser
 2. App component gets created
@@ -68,9 +120,7 @@ The application uses [Geolocation API](https://developer.mozilla.org/en-US/docs/
 
 Since step 4 will execute before step 3 completes its execution, React app with functional component causes an error.
 
----
-
-## Refactoring from Functional to Class Components
+### Refactoring from Functional to Class Components
 
 1. JS file loaded by browser
 2. App component gets created
@@ -87,22 +137,20 @@ Below are the rules of Class Components
 * Must extend (subclass) React.Component
 * Must define a 'render' method that returns some amount of JSX
 
----
+### Rules of State
 
-## Rules of State
-
-Below are the rules of State
+Below are the rules of State:
 
 * Only usable with class components - State can be also used with hooks system
 * You will confuse props with sate 🙁
 * 'State' is a JS object that contains data relevant to a component
 * Updating 'state' on a component causes the component to (almost) instantly render
 * State must be initialized when a component is created
-* State can **only** be updated using the function 'setState'
+* State can **only** be updated using the function `setState`
 
----
+### App Lifecycle Walkthrough
 
-## App Lifecycle Walkthrough
+App Lifecycle:
 
 1. JS file loaded by browser
 2. Instance of App component is created
@@ -113,14 +161,12 @@ Below are the rules of State
 6. React calls the components to render method
 7. App returns JSX, gets rendered to page as HTML
 8. We get result of geolocation!
-9. We update out state object with a call to 'this.setState'
+9. We update out state object with a call to `this.setState`
 10. React sees that we updated the state of a component
 11. React calls our 'render' method a second time
 12. React takes that JSX and updates content on the screen
 
----
-
-## Introducing Lifecycle Method
+### Introducing Lifecycle Method
 
 A component lifecycle method is a function that can get optionally defined inside of a class based component.
 
@@ -137,9 +183,7 @@ Component Lifecycle:
    * sit and wait until this component is no longer shown
 5. `componentWillUnmount`
 
----
-
-## Why Lifecycle Methods
+### Why Lifecycle Methods
 
 Component Lifecycle:
 
@@ -164,73 +208,9 @@ Other available lifecycle methods (rarely used):
 
 ---
 
-# Getting Started with Create React App
+## Credits
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [Modern React with Redux by Stephen Grider](https://www.udemy.com/course/react-redux/)
+* [Semantic UI](https://semantic-ui.com/)
+* [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/APIGeolocation_API)
+* [Dev - Setting up a CI/CD workflow on GitHub Actions for a React App (with GitHub Pages and Codecov)](https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-react-app-with-github-pages-and-codecov-4hnp)
