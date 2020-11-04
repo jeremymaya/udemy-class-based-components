@@ -16,15 +16,18 @@ import ReactDOM from 'react-dom';
 
 // Class Component based
 class App extends React.Component {
-    // initialized the state by using a constructor function
-    // constructor function now has a single purpose - initializing the state object 
-    constructor(props) {
-        // super() references the parent constructor function for React.Component
-        super(props);
+    // // initialized the state by using a constructor function
+    // // constructor function now has a single purpose - initializing the state object 
+    // constructor(props) {
+    //     // super() references the parent constructor function for React.Component
+    //     super(props);
 
-        // this is ONLY TIME we do direct assignment to this.state
-        this.state = { lat: null, errorMessage: '' };
-    }
+    //     // this is ONLY TIME we do direct assignment to this.state
+    //     this.state = { lat: null, errorMessage: '' };
+    // }
+
+    // equivalent to the previous constructor function
+    state = { lat: null, errorMessage: '' };
 
     // avoid data-loading in the constructor function
     componentDidMount() {
